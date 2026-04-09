@@ -29,10 +29,10 @@ jobs:
         go-version: ${{ matrix.go_version }}
       
     - name: Build-DB
-      run: docker-compose build
+      run: docker compose build .
       
     - name: Create-DB
-      run: docker-compose up -d
+      run: docker compose up -d
 
     - name: Test
       run: go test -v main_test.go 
@@ -49,9 +49,7 @@ jobs:
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v3.2.2
       with:
-        # Artifact name
         name: Programa em GO Lang
-        # A file, directory or wildcard pattern that describes what to upload
         path: main
   
   docker:
