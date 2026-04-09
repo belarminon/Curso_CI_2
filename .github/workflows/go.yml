@@ -32,7 +32,7 @@ jobs:
       run: docker build .
       
     - name: Create-DB
-      run: docker compose up -d
+      run: docker compose up -d postgres
 
     - name: Wait for Postgres
       run: |
